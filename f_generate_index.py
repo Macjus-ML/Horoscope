@@ -5,11 +5,11 @@ from datetime import datetime as dt
 
 def generate_page(head, body):
     page = f"""
-    		<html>
-    		{head}
-    		{body}
-    		</html>
-    		"""
+            <html>
+            {head}
+            {body}
+            </html>
+            """
     return page
 
 
@@ -21,7 +21,10 @@ def generate_head(title):
 def generate_body(header, paragraphs):
     body = f"<h1>{header}</h1>"
     for p in paragraphs:
-        body +=f"<p>{p}</p>"
+        body += f"<p>{p}</p>"
+    body += f"<hr/>"
+    body += "<p>" "<img src='image.png' width = 25% />"
+    body += "<p><a href='about.html'> О чем это" "</p>"
     return f"<body>{body}</body>"
 
 
@@ -36,6 +39,7 @@ def save_page(title, header, paragraphs, output="index.html"):
     fp.close()
 
 ##########################
+
 
 today = dt.now().date()
 save_page(
